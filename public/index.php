@@ -6,25 +6,32 @@
 
 // Variables
 $headings = ['Large', 'Medium', 'Small', 'Extra Small'];
-$bodys = ['Large', 'Medium', 'Small'];
+$bodies = ['Large', 'Medium', 'Small'];
 $articles = [
-	[
-		'image' => [ 'url' => '', 'title' => 'Placeholder IMG' ],
-		'heading' => 'Article Heading',
-		'subheading' => 'Subheading / Category / Date',
-		'teaser' => 'Teaser copy of around two to three lines of small text...',
-		'cta' => [ 'url' => '', 'title' => 'Link/CTA' ],
-	],
-	[
-		'image' => [ 'url' => '', 'title' => '' ],
-		'heading' => 'Article Heading',
-		'subheading' => 'Subheading / Category / Date',
-		'teaser' => 'Teaser copy of around two to three lines of small text...',
-		'cta' => [ 'url' => '', 'title' => 'Link/CTA' ],
-	],
+    [
+        'image' => [ 'url' => '', 'title' => 'Placeholder IMG' ],
+        'heading' => 'Article Heading',
+        'subheading' => 'Subheading / Category / Date',
+        'teaser' => 'Teaser copy of around two to three lines of small text...',
+        'cta' => [ 'url' => '', 'title' => 'Link/CTA' ],
+    ],
+    [
+        'image' => [ 'url' => '', 'title' => '' ],
+        'heading' => 'Article Heading',
+        'subheading' => 'Subheading / Category / Date',
+        'teaser' => 'Teaser copy of around two to three lines of small text...',
+        'cta' => [ 'url' => '', 'title' => 'Link/CTA' ],
+    ],
+];
+$listItems = [
+    [ 'heading' => 'List Item 1', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
+    [ 'heading' => 'List Item 2', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
+    [ 'heading' => 'List Item 3', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
+    [ 'heading' => 'List Item 4', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
+    [ 'heading' => 'List Item 5', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
 ];
 
-// Markup ?>
+// Markup?>
 
 <!doctype html>
 <html class="no-js" lang="">
@@ -38,9 +45,9 @@ $articles = [
 	</head>
 
 	<body>
-		<script>
-			window["the-store"] = { components: [], state: {} };
-		</script>
+	<script>
+	window["the-store"] = { components: [], state: {} };
+</script>
 
 		<main id="main" class="main">
 			<header>
@@ -50,7 +57,7 @@ $articles = [
 				<a href="#" title="Click to...">Discover</a>
 			</header>
 
-			<section>
+			<section class="overview">
 				<img src="" alt="Placeholder IMG" />
 				<div>
 					<h4>Intro Subheading</h4>
@@ -64,7 +71,7 @@ $articles = [
 			<hr />
 
 			<?php if (count($articles) > 0) : ?>
-				<div class="grid">
+				<section class="grid">
 					<?php foreach ($articles as $a) : ?>
 						<article>
 							<?php if (!empty($a['image'])) : ?>
@@ -85,7 +92,7 @@ $articles = [
 							<?php endif; ?>
 						</article>
 					<?php endforeach; ?>
-				</div>
+				</section>
 			<?php endif ; ?>
 
 			<hr />
@@ -95,15 +102,15 @@ $articles = [
 					Heading <?= $h ?>
 				</h<?= $i + 1 ?>>
 			<?php endforeach; ?>
-			<?php foreach ($headings as $i => $h) : ?>
+			<?php foreach ($bodies as $i => $b) : ?>
 				<p>
-					Body <?= $h ?>
+					Body <?= $b ?>
 				</p>
 			<?php endforeach; ?>
 
 			<script>
 				window["the-store"].components.push({
-					handle: "main",
+				handle: "main",
 					id: "main",
 				});
 			</script>

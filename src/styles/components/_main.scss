@@ -102,7 +102,7 @@ $handle: "main";
 		}
 	}
 
-	> section {
+	> section.overview {
 		display: flex;
 		flex-direction: column;
 		justiy-content: space-between;
@@ -177,7 +177,7 @@ $handle: "main";
 		}
 	}
 
-	> .grid {
+	> section.grid {
 		display: flex;
 		justify-content: space-between;
 		max-width: 777px;
