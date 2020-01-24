@@ -31,8 +31,8 @@
 	}
 	@if ($size == "heading-lg") {
 		@include bold;
-		@include fontSizeRem(2.4);
-		@include lineHeightRem(3.0);
+		@include fontSizeRem(3.6);
+		@include lineHeightRem(4.2);
 		font-family: $font-family-sans;
 	}
 	@if ($size == "heading-md") {
