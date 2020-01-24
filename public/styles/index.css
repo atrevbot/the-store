@@ -360,7 +360,9 @@ button {
       width: 100%;
       min-height: 222px;
       background-color: #999;
-      border: 1px solid #111; }
+      border: 1px solid #111;
+      border-top-right-radius: 13px;
+      border-bottom-left-radius: 13px; }
       @media (min-width: 1080px) {
         .main > section > img {
           position: absolute;
