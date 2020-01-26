@@ -422,17 +422,24 @@ button {
     display: flex;
     justify-content: space-between;
     max-width: 777px;
-    margin: 48px auto; }
+    margin: 48px auto;
+    perspective: 1000px; }
+    .main > section.grid.in-view > article {
+      opacity: 1;
+      transform: rotate3d(0, 0, 0, 0) scaleY(1) translateY(0); }
     .main > section.grid > article {
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
+      transform-origin: top;
+      transform: rotate3d(1, 0, 0, -90deg) scaleY(0.75) translateY(24px);
       max-width: 333px;
       padding: 24px;
       padding-bottom: 24px;
       border: 1px solid #111;
-      border-radius: 13px; }
+      border-radius: 13px;
+      transition: opacity 0.1s ease-out, transform 0.2s ease-out; }
       .main > section.grid > article > img {
         display: block;
         width: calc(100% + 48px);

@@ -103,6 +103,10 @@ var _default = function _default(_ref) {
   _classCallCheck(this, _default);
 
   var el = document.getElementById(id);
+  var grid = el.querySelector('.grid');
+  setTimeout(function () {
+    grid.classList.add("in-view");
+  }, 0);
 };
 
 exports["default"] = _default;

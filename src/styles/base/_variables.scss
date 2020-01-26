@@ -72,10 +72,12 @@ $font-family-mono: monospace;
 /* Animations */
 
 $animate-profile: ease-out;
+$animate-speed-xs: 0.1s;
 $animate-speed-sm: 0.2s;
 $animate-speed-md: 0.3s;
 $animate-speed-lg: 0.5s;
 $animate-speed-xl: 0.8s;
+$animate-xs: $animate-speed-xs$animate-profile;
 $animate-sm: $animate-speed-sm $animate-profile;
 $animate-md: $animate-speed-md $animate-profile;
 $animate-lg: $animate-speed-lg $animate-profile;
