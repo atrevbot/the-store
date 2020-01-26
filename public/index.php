@@ -16,7 +16,7 @@ $articles = [
         'cta' => [ 'url' => '', 'title' => 'Link/CTA' ],
     ],
     [
-        'image' => [ 'url' => '', 'title' => '' ],
+        'image' => [ 'url' => '', 'title' => 'Placeholder IMG' ],
         'heading' => 'Article Heading',
         'subheading' => 'Subheading / Category / Date',
         'teaser' => 'Teaser copy of around two to three lines of small text...',
@@ -45,12 +45,12 @@ $listItems = [
 	</head>
 
 	<body>
-	<script>
-	window["the-store"] = { components: [], state: {} };
-</script>
+		<script>
+			window["the-store"] = { components: [], state: {} };
+		</script>
 
 		<main id="main" class="main">
-			<header>
+			<header class="hero">
 				<img src="" alt="Placeholder IMG" />
 				<h1>Page Heading Hero Text</h1>
 				<p>Some intro text the leads into a CTA</p>
@@ -73,7 +73,7 @@ $listItems = [
 			<?php if (count($articles) > 0) : ?>
 				<section class="grid">
 					<?php foreach ($articles as $a) : ?>
-						<article>
+						<article class="card">
 							<?php if (!empty($a['image'])) : ?>
 								<img
 									src="<?= $a['image']['url'] ?>"

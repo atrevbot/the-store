@@ -18,6 +18,14 @@ sup {
 	font-size: 0.5em;
 }
 
+hr {
+	width: 100%;
+	height: 1px;
+	margin: $spacing-sm 0;
+	padding: 0;
+	background-color: $color-br-gray-lt;
+}
+
 [type=text],
 [type=number],
 [type=search],

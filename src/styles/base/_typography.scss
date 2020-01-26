@@ -20,8 +20,6 @@
 }
 
 @mixin font($size) {
-	font-family: $font-family-sans;
-
 	// Heading
 	@if ($size == "heading-xl") {
 		@include bold;
@@ -62,10 +60,12 @@
 	@if ($size == "body-md") {
 		@include fontSizeRem(1.6);
 		@include lineHeightRem(2.4);
+		font-family: $font-family-serif;
 	}
 	@if ($size == "body-sm") {
 		@include fontSizeRem(1.4);
 		@include lineHeightRem(1.8);
+		font-family: $font-family-sans;
 	}
 
 	// Link / Button
@@ -74,5 +74,39 @@
 		@include fontSizeRem(1.4);
 		@include lineHeightRem(2.4);
 		font-family: $font-family-mono;
+	}
+}
+
+@mixin link($size: "md", $icon: false) {
+	@include font("link-md");
+	color: navy;
+	transition: color $animate-sm;
+
+	&:hover {
+		color: darken(orange, 5%);
+	}
+
+	@if ($icon) {
+		display: flex;
+		align-items: center;
+
+		> em {
+			font-size: $spacing-sm;
+		}
+	}
+}
+
+@mixin button() {
+	@include font("link-md");
+	display: inline-block;
+	line-height: 36px;
+	padding: 0 $spacing-sm;
+	background-color: orange;
+	color: navy;
+	border-radius: 3px;
+	transition: background-color $animate-sm;
+
+	&:hover {
+		background-color: darken(orange, 5%);
 	}
 }

@@ -1,0 +1,43 @@
+header.hero {
+	position: relative;
+	margin: -$spacing-sm;
+	margin-bottom: 0;
+	padding: $spacing-xl $spacing-md $spacing-md $spacing-md;
+	border-bottom: 1px solid $color-br-gray-dk;
+
+	@media (min-width: $screen-md-min) {
+		padding-left: $spacing-lg;
+		padding-right: $spacing-lg;
+	}
+
+	> * {
+		position: relative; // Compensate for bg image
+	}
+
+	> img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		background-color: $color-bg-gray-md;
+	}
+
+	> h1 {
+		@include font("heading-lg");
+		color: $color-white;
+	}
+
+	> p {
+		@include font("body-md");
+		@include bold;
+		margin-top: $spacing-sm;
+		color: #222;
+	}
+
+	> a {
+		@include button;
+		margin-top: $spacing-xs * 3;
+	}
+}
