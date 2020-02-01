@@ -247,50 +247,17 @@ article.card {
   overflow: hidden;
   transform-origin: top;
   max-width: 333px;
-  padding: 24px;
-  padding-bottom: 24px;
   border: 1px solid #111;
   border-radius: 13px;
   animation: swing-in 0.5s; }
-  article.card > img {
+  article.card > a:focus {
+    box-shadow: 0 0 24px 12px orange; }
+  article.card > a:first-of-type > img {
     display: block;
-    width: calc(100% + 48px);
+    width: 100%;
     min-height: 160px;
-    margin: -24px;
-    margin-bottom: 0;
     background-color: #999; }
-  article.card > h3 {
-    font-size: 26px;
-    font-size: 2.6rem;
-    line-height: 36px;
-    line-height: 3.6rem;
-    font-family: serif;
-    margin-top: 24px; }
-  article.card > h5 {
-    font-size: 16px;
-    font-size: 1.6rem;
-    line-height: 24px;
-    line-height: 2.4rem;
-    font-family: serif;
-    position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 2em;
-    margin-top: 12px;
-    color: #999; }
-  article.card:last-child {
-    margin-left: 24px; }
-    article.card:last-child > h3 {
-      font-family: sans-serif; }
-  article.card > p {
-    font-size: 14px;
-    font-size: 1.4rem;
-    line-height: 18px;
-    line-height: 1.8rem;
-    font-family: sans-serif;
-    margin-top: 12px;
-    color: #666; }
-  article.card > a {
+  article.card > a:last-of-type {
     font-weight: 700;
     font-size: 14px;
     font-size: 1.4rem;
@@ -304,18 +271,51 @@ article.card {
     justify-content: space-between;
     position: relative;
     margin-top: 24px;
-    padding-top: 24px; }
-    article.card > a:hover {
+    padding: 24px; }
+    article.card > a:last-of-type:hover {
       color: #e69500; }
-    article.card > a > em {
+    article.card > a:last-of-type > em {
       font-size: 24px; }
-    article.card > a:before {
+    article.card > a:last-of-type:before {
       content: "";
       position: absolute;
       top: 0;
       right: -24px;
       left: -24px;
       border-top: 1px solid #DEDEDE; }
+  article.card > div {
+    padding: 24px; }
+    article.card > div > h3 {
+      font-size: 26px;
+      font-size: 2.6rem;
+      line-height: 36px;
+      line-height: 3.6rem;
+      font-family: serif;
+      margin-top: 24px; }
+    article.card > div > h5 {
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 24px;
+      line-height: 2.4rem;
+      font-family: serif;
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 2em;
+      margin-top: 12px;
+      color: #999; }
+    article.card > div:last-child {
+      margin-left: 24px; }
+      article.card > div:last-child > h3 {
+        font-family: sans-serif; }
+    article.card > div > p {
+      font-size: 14px;
+      font-size: 1.4rem;
+      line-height: 18px;
+      line-height: 1.8rem;
+      font-family: sans-serif;
+      margin-top: 12px;
+      color: #666; }
 
 header.hero {
   position: relative;
@@ -371,6 +371,8 @@ header.hero {
     margin-top: 36px; }
     header.hero > a:hover {
       background-color: #e69500; }
+    header.hero > a:focus {
+      box-shadow: 0 0 24px 0 #DEDEDE; }
 
 .main {
   max-width: 1111px;
@@ -524,3 +526,5 @@ section.overview {
           position: absolute;
           right: 48px;
           bottom: 24px; } }
+      section.overview > div > a:focus {
+        box-shadow: 0 0 24px 0 navy; }

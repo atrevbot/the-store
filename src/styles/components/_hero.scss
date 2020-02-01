@@ -39,5 +39,9 @@ header.hero {
 	> a {
 		@include button;
 		margin-top: $spacing-xs * 3;
+
+		&:focus {
+			box-shadow: 0 0 $spacing-sm 0 $color-br-gray-lt;
+		}
 	}
 }

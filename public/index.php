@@ -75,13 +75,19 @@ $listItems = [
 					<?php foreach ($articles as $a) : ?>
 						<article class="card">
 							<?php if (!empty($a['image'])) : ?>
-								<img
-									src="<?= $a['image']['url'] ?>"
-									alt="<?= $a['image']['title'] ?>" />
+								<a
+									href="<?= $a['cta']['url'] ?>"
+									title="<?= $a['cta']['title'] ?>">
+									<img
+										src="<?= $a['image']['url'] ?>"
+										alt="<?= $a['image']['title'] ?>" />
+								</a>
 							<?php endif; ?>
-							<h3><?= $a['heading'] ?></h3>
-							<h5><?= $a['subheading'] ?></h6>
-							<p><?= $a['teaser'] ?></p>
+							<div>
+								<h3><?= $a['heading'] ?></h3>
+								<h5><?= $a['subheading'] ?></h6>
+								<p><?= $a['teaser'] ?></p>
+							</div>
 							<?php if (!empty($a['cta'])) : ?>
 								<a
 									href="<?= $a['cta']['url'] ?>"

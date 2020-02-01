@@ -19,64 +19,72 @@ article.card {
 	overflow: hidden;
 	transform-origin: top;
 	max-width: 333px;
-	padding: $spacing-sm;
-	padding-bottom: $spacing-sm;
 	border: 1px solid $color-br-gray-dk;
 	border-radius: 13px;
 	animation: swing-in 0.5s;
 
-	> img {
-		display: block;
-		width: calc(100% + #{$spacing-sm * 2});
-		min-height: 160px;
-		margin: -$spacing-sm;
-		margin-bottom: 0;
-		background-color: $color-bg-gray-md;
-	}
+	> a {
+		&:focus {
+			box-shadow: 0 0 $spacing-sm ($spacing-xs) orange;
+		}
 
-	> h3 {
-		@include font("heading-sm");
-		margin-top: $spacing-sm;
-	}
+		&:first-of-type {
+			> img {
+				display: block;
+				width: 100%;
+				min-height: 160px;
+				background-color: $color-bg-gray-md;
+			}
+		}
 
-	> h5 {
-		@include font("body-md");
-		position: relative;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		height: 2em;
-		margin-top: $spacing-xs;
-		color: $color-fg-gray-lt;
-	}
+		&:last-of-type {
+			@include link($icon: true);
+			justify-content: space-between;
+			position: relative;
+			margin-top: $spacing-sm;
+			padding: $spacing-sm;
 
-	&:last-child {
-		margin-left: $spacing-sm;
-
-		> h3 {
-			font-family: $font-family-sans;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: -$spacing-sm;;
+				left: -$spacing-sm;;
+				border-top: 1px solid $color-br-gray-lt;
+			}
 		}
 	}
 
-	> p {
-		@include font("body-sm");
-		margin-top: $spacing-xs;
-		color: $color-fg-gray-md;
-	}
+	> div {
+		padding: $spacing-sm;
 
-	> a {
-		@include link($icon: true);
-		justify-content: space-between;
-		position: relative;
-		margin-top: $spacing-sm;
-		padding-top: $spacing-sm;
+		> h3 {
+			@include font("heading-sm");
+			margin-top: $spacing-sm;
+		}
 
-		&:before {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: -$spacing-sm;;
-			left: -$spacing-sm;;
-			border-top: 1px solid $color-br-gray-lt;
+		> h5 {
+			@include font("body-md");
+			position: relative;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 2em;
+			margin-top: $spacing-xs;
+			color: $color-fg-gray-lt;
+		}
+
+		&:last-child {
+			margin-left: $spacing-sm;
+
+			> h3 {
+				font-family: $font-family-sans;
+			}
+		}
+
+		> p {
+			@include font("body-sm");
+			margin-top: $spacing-xs;
+			color: $color-fg-gray-md;
 		}
 	}
 }

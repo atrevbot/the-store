@@ -64,6 +64,10 @@ section.overview {
 				right: $spacing-md;
 				bottom: $spacing-sm;
 			}
+
+			&:focus {
+				box-shadow: 0 0 $spacing-sm 0 navy;
+			}
 		}
 	}
 }
