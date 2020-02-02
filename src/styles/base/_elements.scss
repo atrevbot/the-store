@@ -34,9 +34,10 @@ hr {
 [type=tel],
 [type=radio],
 [type=submit],
+[type=reset],
 select,
 textarea {
-	appearance: none;
+	// appearance: none;
 	padding: 0;
 	background: none;
 	border: 0;

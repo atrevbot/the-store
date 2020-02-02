@@ -3,7 +3,6 @@ export default class {
 		id,
 	}) {
 		const el = document.getElementById(id);
-
 		const grid = el.querySelector('.grid');
 
 		setTimeout(() => {

@@ -188,9 +188,9 @@ hr {
 [type=tel],
 [type=radio],
 [type=submit],
+[type=reset],
 select,
 textarea {
-  appearance: none;
   padding: 0;
   background: none;
   border: 0;
@@ -204,6 +204,7 @@ textarea {
   [type=tel]:-ms-expand,
   [type=radio]:-ms-expand,
   [type=submit]:-ms-expand,
+  [type=reset]:-ms-expand,
   select:-ms-expand,
   textarea:-ms-expand {
     display: none; }
@@ -316,6 +317,156 @@ article.card {
       font-family: sans-serif;
       margin-top: 12px;
       color: #666; }
+
+form[method="get"],
+form[method="post"] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 555px;
+  margin: 0 auto;
+  padding: 36px 24px 24px;
+  background-color: #F4F5F7;
+  border: 1px solid #DEDEDE;
+  box-shadow: 2px 2px 12px 2px #DEDEDE; }
+  section > form[method="get"], section >
+  form[method="post"] {
+    margin: 48px auto; }
+  form[method="get"] > *:first-child,
+  form[method="post"] > *:first-child {
+    margin: 0; }
+  form[method="get"] > h3,
+  form[method="post"] > h3 {
+    font-size: 26px;
+    font-size: 2.6rem;
+    line-height: 36px;
+    line-height: 3.6rem;
+    font-family: serif; }
+  form[method="get"] > label,
+  form[method="post"] > label {
+    font-weight: 700;
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 20px;
+    line-height: 2rem;
+    font-family: monospace;
+    display: block;
+    margin-top: 24px;
+    color: #444; }
+  form[method="get"] > fieldset,
+  form[method="post"] > fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 24px; }
+  form[method="get"] > label + fieldset,
+  form[method="post"] > label + fieldset {
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #DEDEDE; }
+    form[method="get"] > label + fieldset label,
+    form[method="post"] > label + fieldset label {
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 24px;
+      line-height: 2.4rem;
+      font-family: serif;
+      margin-right: 6px;
+      color: #666; }
+      form[method="get"] > label + fieldset label [type="checkbox"],
+      form[method="get"] > label + fieldset label [type="radio"],
+      form[method="post"] > label + fieldset label [type="checkbox"],
+      form[method="post"] > label + fieldset label [type="radio"] {
+        margin-right: 3px; }
+  form[method="get"] [type="text"],
+  form[method="get"] [type="email"],
+  form[method="get"] [type="number"],
+  form[method="get"] [type="search"],
+  form[method="get"] textarea,
+  form[method="post"] [type="text"],
+  form[method="post"] [type="email"],
+  form[method="post"] [type="number"],
+  form[method="post"] [type="search"],
+  form[method="post"] textarea {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 24px;
+    line-height: 2.4rem;
+    font-family: serif;
+    display: block;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    margin-top: 6px;
+    padding: 12px;
+    background-color: #FFF;
+    border: 1px solid #111; }
+    form[method="get"] [type="text"]:focus,
+    form[method="get"] [type="email"]:focus,
+    form[method="get"] [type="number"]:focus,
+    form[method="get"] [type="search"]:focus,
+    form[method="get"] textarea:focus,
+    form[method="post"] [type="text"]:focus,
+    form[method="post"] [type="email"]:focus,
+    form[method="post"] [type="number"]:focus,
+    form[method="post"] [type="search"]:focus,
+    form[method="post"] textarea:focus {
+      background-color: rgba(173, 216, 230, 0.1);
+      border: 1px solid navy; }
+  form[method="get"] textarea,
+  form[method="post"] textarea {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 24px;
+    line-height: 2.4rem;
+    font-family: serif;
+    min-height: 128px; }
+  form[method="get"] [type="reset"],
+  form[method="post"] [type="reset"] {
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 24px;
+    line-height: 2.4rem;
+    font-family: monospace;
+    color: navy;
+    transition: color 0.2s ease-out;
+    min-width: 220px;
+    line-height: 36px;
+    line-height: 36px;
+    margin-right: 12px;
+    cursor: pointer; }
+    form[method="get"] [type="reset"]:hover,
+    form[method="post"] [type="reset"]:hover {
+      color: #e69500; }
+  form[method="get"] [type="submit"],
+  form[method="post"] [type="submit"] {
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 24px;
+    line-height: 2.4rem;
+    font-family: monospace;
+    display: inline-block;
+    line-height: 36px;
+    padding: 0 24px;
+    background-color: orange;
+    color: navy;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-out;
+    appearance: none;
+    align-self: center;
+    min-width: 220px;
+    margin-top: 36px; }
+    form[method="get"] [type="submit"]:hover,
+    form[method="post"] [type="submit"]:hover {
+      background-color: #e69500; }
+  form[method="get"] fieldset > [type="submit"],
+  form[method="post"] fieldset > [type="submit"] {
+    margin: 0; }
 
 header.hero {
   position: relative;
