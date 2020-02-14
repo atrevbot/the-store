@@ -511,6 +511,14 @@ form[method="post"] {
   form[method="post"] fieldset > [type="submit"] {
     margin: 0; }
 
+section.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 777px;
+  margin: 48px auto;
+  perspective: 1000px; }
+
 header.hero {
   position: relative;
   margin: -24px;
@@ -693,13 +701,6 @@ section.intro {
     line-height: 18px;
     line-height: 1.8rem;
     font-family: sans-serif; }
-  .main > section.grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 777px;
-    margin: 48px auto;
-    perspective: 1000px; }
 
 section.ordered-list {
   position: relative;

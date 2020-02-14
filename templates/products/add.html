@@ -1,0 +1,23 @@
+{{ define "content" }}
+	<article>
+		<header class="heading">
+			<h1>Add a Product</h1>
+		</header>
+
+		{{ $formID := uniqueID }}
+		<section id="{{ $formID }}" class="form">
+			<form method="post" action="/symptoms/add">
+				{{ .csrfField }}
+				<fieldset>
+					<label for="name">Name</label>
+					<input required id="name" type="text" name="name" />
+				</fieldset>
+				<fieldset>
+					<label for="description">Description</label>
+					<textarea id="description" name="description" maxlength="255"></textarea>
+				</fieldset>
+				<input type="submit" value="Add Product" />
+			</form>
+		</section>
+	</article>
+{{ end }}

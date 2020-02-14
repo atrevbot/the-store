@@ -1,0 +1,52 @@
+{{ define "content" }}
+	<article>
+		<header class="heading">
+			<img src="" alt="Placeholder IMG" />
+			<h1>Want a custom design?</h1>
+			<p>You came to the right place.</p>
+		</header>
+
+		<section id="form">
+			<form action="/public#form" method="get">
+				{{ .csrfField }}
+				<h3>Some heading about the form.</h3>
+				<label for="name">Your name</label>
+				<input
+					required
+					id="name"
+					type="text"
+					name="name"
+					placeholder="George Costanza"
+					value="" />
+				<label for="living">Your living situation</label>
+				<input
+					id="living"
+					type="text"
+					name="living"
+					placeholder="At home w/ my parents."
+					value="" />
+				<label for="message">How can we help?</label>
+				<textarea
+					id="number"
+					name="message"
+					placeholder="If I had known that sort of thing was frowned on here..."
+					></textarea>
+				<label for="pester">Can we call you at home?</label>
+				<fieldset>
+					<label for="yes">
+						<input
+							id="yes"
+							type="checkbox"
+							name="pester"
+							value="Yes" />
+						Yes
+					</label>
+				</fieldset>
+				<fieldset>
+					<input type="reset" value="Cancel" />
+					<input type="submit" value="Submit" />
+				</fieldset>
+			</form>
+		</section>
+	</article>
+{{ end }}

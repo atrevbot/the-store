@@ -1,0 +1,8 @@
+section.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 777px;
+	margin: $spacing-md auto;
+	perspective: 1000px;
+}

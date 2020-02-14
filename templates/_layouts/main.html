@@ -1,0 +1,50 @@
+<html lang="en">
+	<head>
+		{{ block "data" . }}{{ end }}
+		{{ if ne .env.ENVIRONMENT "development" }}
+			{{ block "favicons" . }}{{ end }}
+		{{ end }}
+
+		<link rel="stylesheet" type="text/css" href="/static/styles/index.css"></link>
+	</head>
+
+	<body data-no-js="true">
+		<script>
+			document.body.setAttribute('data-no-js', false);
+			window[{{ .env.SITE_HANDLE }}] = { components: [], state: {} };
+		</script>
+
+		<header>
+			<a href="/" title="Home">Home</a>
+			<nav>
+				<a href="/products" title="Products">Products</a>
+			</nav>
+		</header>
+
+		<main id="main" class="main">
+			{{ block "content" . }}{{ end }}
+
+			<script>
+				window["the-store"].components.push({
+					handle: "main",
+					id: "main",
+				});
+			</script>
+		</main>
+
+		<footer>
+			<p>&copy; {{ now }} Trevor Plassman</p>
+		</footer>
+
+		<script src="/static/scripts/index.js"></script>
+
+		{{ if eq .env.ENVIRONMENT "development" }}
+			<!-- LiveReload server -->
+			<script>
+				document.write(
+					`<script src="http://${(location.host || 'localhost').split(':')[0]}:35729/livereload.js?snipver=1"></script>`
+				);
+			</script>
+		{{ end }}
+	</body>
+</html>

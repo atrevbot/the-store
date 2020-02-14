@@ -5,14 +5,14 @@
 	"main": "index.js",
 	"scripts": {
 		"build-markup": "console.log('TODO: Ececute script to compile markup w/ optional data source')",
-		"build-scripts": "browserify src/scripts/index.js -t babelify -o public/scripts/index.js",
-		"build-styles": "node-sass --include-path scss src/styles/index.scss public/styles/index.css",
+		"build-scripts": "browserify src/scripts/index.js -t babelify -o static/scripts/index.js",
+		"build-styles": "node-sass --include-path scss src/styles/index.scss static/styles/index.css",
 		"build": "npm run build-scripts && npm run build-styles",
-		"serve-php": "php -S 127.0.0.1:8000",
+		"serve": "go run main.go",
 		"watch-markup": "nodemon --watch src -e twig -x \"npm run build-markup\"",
 		"watch-scripts": "nodemon --watch src -x \"npm run build-scripts\"",
 		"watch-styles": "nodemon --watch src -e scss -x \"npm run build-styles\"",
-		"watch": "concurrently --kill-others \"npm run watch-scripts\" \"npm run watch-styles\" \"npm run serve-php\""
+		"watch": "concurrently --kill-others \"npm run watch-scripts\" \"npm run watch-styles\" \"npm run serve\""
 	},
 	"repository": "git@github.com:atrevbot/the-store.git",
 	"author": "atrevbot",
