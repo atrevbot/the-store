@@ -3,10 +3,23 @@ export default class {
 		id,
 	}) {
 		const el = document.getElementById(id);
-		const grid = el.querySelector('.grid');
+		const productTiles = el.querySelectorAll('article.product-tile');
+		const orientations = Array.from(productTiles)
+			.reduce((acc, cur) => (
+				acc.concat(Array.from(cur.querySelectorAll('nav img')))
+			), []);
 
-		setTimeout(() => {
-			grid.classList.add("in-view");
-		}, 0);
+		function handleHover(e) {
+			const orientation = e.currentTarget;
+			const featured = orientation
+				.closest('article.product-tile')
+				.querySelector('a > img');
+
+			featured.setAttribute('src', orientation.getAttribute('src'));
+		}
+
+		orientations.forEach(o => {
+			o.addEventListener('mouseover', handleHover);
+		});
 	}
 }

@@ -5,44 +5,51 @@
  */
 
 // Variables
-$headings = ['Large', 'Medium', 'Small', 'Extra Small'];
-$bodies = ['Large', 'Medium', 'Small'];
-$articles = [
+$products = [
     [
-        'image' => [ 'url' => '', 'title' => 'Placeholder IMG' ],
-        'heading' => 'Article Heading',
-        'subheading' => 'Subheading / Category / Date',
-        'teaser' => 'Teaser copy of around two to three lines of small text...',
-        'cta' => [ 'url' => '', 'title' => 'Link/CTA' ],
+        'thumbs' => [
+            ['url' => '/public/images/products/1a.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1b.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1d.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1c.jpg', 'title' => ''],
+        ],
+        'name' => 'Product 1',
+        'url' => '/products/1'
     ],
     [
-        'image' => [ 'url' => '', 'title' => 'Placeholder IMG' ],
-        'heading' => 'Article Heading',
-        'subheading' => 'Subheading / Category / Date',
-        'teaser' => 'Teaser copy of around two to three lines of small text...',
-        'cta' => [ 'url' => '', 'title' => 'Link/CTA' ],
+        'thumbs' => [
+            ['url' => '/public/images/products/1a.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1b.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1d.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1c.jpg', 'title' => ''],
+        ],
+        'name' => 'Product 2',
+        'url' => '/products/2',
+    ],
+    [
+        'thumbs' => [
+            ['url' => '/public/images/products/1a.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1b.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1d.jpg', 'title' => ''],
+            ['url' => '/public/images/products/1c.jpg', 'title' => ''],
+        ],
+        'name' => 'Product 3',
+        'url' => '/products/3',
     ],
 ];
-$listItems = [
-    [ 'heading' => 'List Item 1', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
-    [ 'heading' => 'List Item 2', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
-    [ 'heading' => 'List Item 3', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
-    [ 'heading' => 'List Item 4', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
-    [ 'heading' => 'List Item 5', 'subheading' => 'Subheading', 'body' => 'List item body text' ],
+$processSteps = [
+    ['heading' => 'Choose your design.'],
+    ['heading' => 'Schedule your date.'],
+    ['heading' => 'Ship helmet via provided label.'],
+    ['heading' => 'Your design is completed the same day.'],
+    ['heading' => 'Helmet is returned to you within 2 days*.'],
 ];
 
 // Markup?>
 
 <!doctype html>
 <html class="no-js" lang="">
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<link rel="stylesheet" href="/public/styles/index.css">
-	</head>
+    <?php include '../templates/_components/head.php'; ?>
 
 	<body>
 		<script>
@@ -57,62 +64,79 @@ $listItems = [
 				<a href="#" title="Click to...">Discover</a>
 			</header>
 
-			<section class="overview">
-				<img src="" alt="Placeholder IMG" />
-				<div>
-					<h4>Intro Subheading</h4>
-					<h2>Section Heading Text to Lead</h2>
-					<p>Some longer body copy. Could be a couple of line is need be</p>
-					<p>And maybe another line of it. And there wil be a larger image in here somewhere.</p>
-					<a href="#" title="Click to...">Discover</a>
-				</div>
+			<section class="intro">
+				<h2>We Make Helmets</h2>
+				<p>Some information about the helpmets that we like to make and what our process is.</p>
+				<a href="/shop" title="Show Collections">Show Collections</a>
 			</section>
 
-			<hr />
+			<?php
+            // <section class="overview">
+            // 	<img src="" alt="Placeholder IMG" />
+            // 	<div>
+            // 		<h4>Intro Subheading</h4>
+            // 		<h2>Section Heading Text to Lead</h2>
+            // 		<p>Some longer body copy. Could be a couple of line is need be</p>
+            // 		<p>And maybe another line of it. And there wil be a larger image in here somewhere.</p>
+            // 		<a href="#" title="Click to...">Discover</a>
+            // 	</div>
+            // </section>
+            ?>
 
-			<?php if (count($articles) > 0) : ?>
+			<?php if (count($products) > 0) : ?>
 				<section class="grid">
-					<?php foreach ($articles as $a) : ?>
-						<article class="card">
-							<?php if (!empty($a['image'])) : ?>
+					<?php foreach ($products as $p) : ?>
+						<?php $featured = $p['thumbs'][0] ?? null; ?>
+
+						<article class="product-tile">
+							<?php if ($featured) : ?>
 								<a
-									href="<?= $a['cta']['url'] ?>"
-									title="<?= $a['cta']['title'] ?>">
+									href="<?= $p['url'] ?>"
+									title="<?= $p['name'] ?>">
 									<img
-										src="<?= $a['image']['url'] ?>"
-										alt="<?= $a['image']['title'] ?>" />
+										src="<?= $featured['url'] ?>"
+										alt="<?= $p['name'] ?> product image" />
 								</a>
 							<?php endif; ?>
-							<div>
-								<h3><?= $a['heading'] ?></h3>
-								<h5><?= $a['subheading'] ?></h6>
-								<p><?= $a['teaser'] ?></p>
-							</div>
-							<?php if (!empty($a['cta'])) : ?>
-								<a
-									href="<?= $a['cta']['url'] ?>"
-									title="<?= $a['cta']['title'] ?>">
-									<?= $a['cta']['title'] ?>
-									<em>&rarr;</em>
-								</a>
+							<?php if (count($p['thumbs']) > 1) : ?>
+								<nav>
+									<?php foreach ($p['thumbs'] as $t) : ?>
+										<img
+											src="<?= $t['url'] ?>"
+											alt="<?= $p['name'] ?> product image" />
+									<?php endforeach; ?>
+								</nav>
 							<?php endif; ?>
+							<h3><?= $p['name'] ?></h3>
 						</article>
 					<?php endforeach; ?>
 				</section>
 			<?php endif ; ?>
 
-			<hr />
+			<section class="background-callout">
+				<div>
+					<h2>Create Your Own</h2>
+					<p>Custom designs starting at $200</p>
+					<a href="/contact" title="Contact">Contact</a>
+				</div>
+			</section>
 
-			<?php foreach ($headings as $i => $h) : ?>
-				<h<?= $i + 1 ?>>
-					Heading <?= $h ?>
-				</h<?= $i + 1 ?>>
-			<?php endforeach; ?>
-			<?php foreach ($bodies as $i => $b) : ?>
-				<p>
-					Body <?= $b ?>
-				</p>
-			<?php endforeach; ?>
+			<section class="ordered-list">
+				<h2>How it works</h2>
+				<?php if (count($processSteps) > 0) : ?>
+					<ol>
+						<?php foreach ($processSteps as $i => $s) : ?>
+							<li>
+								<em><?= $i ?></em>
+								<h3><?= $s['heading'] ?></h3>
+							</li>
+						<?php endforeach; ?>
+					</ol>
+				<?php endif; ?>
+				<a href="/process" title="Learn More">Learn More<em>&rarr;</em></a>
+			</section>
+
+			<hr />
 
 			<section id="form">
 				<form action="/public#form" method="get">

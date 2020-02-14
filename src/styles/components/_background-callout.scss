@@ -1,0 +1,31 @@
+section.background-callout {
+	margin: $spacing-sm 0;
+	padding: $spacing-md $spacing-sm;
+	background-color: lightgray;
+
+	> div {
+		position: relative;
+		max-width: 555px;
+		margin: 0 auto;
+
+		> h2 {
+			@include font("heading-md");
+		}
+
+		> p {
+			max-width: 333px;
+			margin-top: $spacing-xs;
+		}
+
+		> a {
+			@include button;
+			display: block;
+			margin-top: $spacing-sm;
+
+			@media (min-width: $screen-sm-min) {
+				position: absolute;
+				right: 0; bottom: 0;
+			}
+		}
+	}
+}

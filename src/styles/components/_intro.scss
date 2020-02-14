@@ -1,0 +1,43 @@
+section.intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	max-width: 777px;
+	margin: $spacing-md auto;
+	text-align: center;
+
+	> h4 {
+		@include font("heading-xs");
+	}
+
+	> h2 {
+		@include font("heading-md");
+		margin-top: $spacing-xs;
+	}
+
+	> p {
+		@include font("body-md");
+		max-width: 444px;
+		margin-top: $spacing-xs;
+
+		&:first-child {
+			margin-top: $spacing-sm;
+		}
+	}
+
+	> a {
+		@include button;
+		margin-top: $spacing-sm;
+
+		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+			position: absolute;
+			right: $spacing-md;
+			bottom: $spacing-sm;
+		}
+
+		&:focus {
+			box-shadow: 0 0 $spacing-sm 0 navy;
+		}
+	}
+}

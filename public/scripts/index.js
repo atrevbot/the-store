@@ -103,10 +103,20 @@ var _default = function _default(_ref) {
   _classCallCheck(this, _default);
 
   var el = document.getElementById(id);
-  var grid = el.querySelector('.grid');
-  setTimeout(function () {
-    grid.classList.add("in-view");
-  }, 0);
+  var productTiles = el.querySelectorAll('article.product-tile');
+  var orientations = Array.from(productTiles).reduce(function (acc, cur) {
+    return acc.concat(Array.from(cur.querySelectorAll('nav img')));
+  }, []);
+
+  function handleHover(e) {
+    var orientation = e.currentTarget;
+    var featured = orientation.closest('article.product-tile').querySelector('a > img');
+    featured.setAttribute('src', orientation.getAttribute('src'));
+  }
+
+  orientations.forEach(function (o) {
+    o.addEventListener('mouseover', handleHover);
+  });
 };
 
 exports["default"] = _default;

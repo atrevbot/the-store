@@ -1,0 +1,60 @@
+section.ordered-list {
+	position: relative;
+	max-width: 777px;
+	margin: $spacing-md auto;
+
+	> h2 {
+		@include font("heading-md");
+	}
+
+	> ol {
+		max-width: 555px;
+		margin: 0 auto;
+		margin-top: $spacing-sm;
+		margin-bottom: $spacing-sm;
+
+		> li {
+			display: flex;
+			align-items: center;
+			margin-top: $spacing-xs;
+
+			&:first-child {
+				margin: 0;
+			}
+
+			> em {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: $spacing-md;
+				height: $spacing-md;
+				margin-right: $spacing-xs;
+				border-radius: 50%;
+				border: 3px solid lightgray;
+				text-align: center;
+
+				> i {
+					@include font("heading-xs");
+				}
+			}
+
+			> h3 {
+				@include font("heading-sm");
+			}
+
+			> p {
+				@include font("body-sm");
+				margin-top: $spacing-xs;
+			}
+		}
+	}
+
+	> a {
+		@include link($icon: true);
+
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+			top: 0; right: 0;
+		}
+	}
+}

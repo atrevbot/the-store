@@ -231,6 +231,48 @@ button {
 /**
  * Order alphabetically
  */
+section.background-callout {
+  margin: 24px 0;
+  padding: 48px 24px;
+  background-color: lightgray; }
+  section.background-callout > div {
+    position: relative;
+    max-width: 555px;
+    margin: 0 auto; }
+    section.background-callout > div > h2 {
+      font-weight: 700;
+      font-size: 22px;
+      font-size: 2.2rem;
+      line-height: 28px;
+      line-height: 2.8rem;
+      font-family: sans-serif; }
+    section.background-callout > div > p {
+      max-width: 333px;
+      margin-top: 12px; }
+    section.background-callout > div > a {
+      font-weight: 700;
+      font-size: 14px;
+      font-size: 1.4rem;
+      line-height: 24px;
+      line-height: 2.4rem;
+      font-family: monospace;
+      display: inline-block;
+      line-height: 36px;
+      padding: 0 24px;
+      background-color: orange;
+      color: navy;
+      border-radius: 3px;
+      transition: background-color 0.2s ease-out;
+      display: block;
+      margin-top: 24px; }
+      section.background-callout > div > a:hover {
+        background-color: #e69500; }
+      @media (min-width: 768px) {
+        section.background-callout > div > a {
+          position: absolute;
+          right: 0;
+          bottom: 0; } }
+
 @keyframes swing-in {
   0% {
     opacity: 0;
@@ -276,6 +318,7 @@ article.card {
     article.card > a:last-of-type:hover {
       color: #e69500; }
     article.card > a:last-of-type > em {
+      margin-left: 12px;
       font-size: 24px; }
     article.card > a:last-of-type:before {
       content: "";
@@ -525,8 +568,66 @@ header.hero {
     header.hero > a:focus {
       box-shadow: 0 0 24px 0 #DEDEDE; }
 
+section.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 777px;
+  margin: 48px auto;
+  text-align: center; }
+  section.intro > h4 {
+    font-weight: 700;
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 20px;
+    line-height: 2rem;
+    font-family: monospace; }
+  section.intro > h2 {
+    font-weight: 700;
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 28px;
+    line-height: 2.8rem;
+    font-family: sans-serif;
+    margin-top: 12px; }
+  section.intro > p {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 24px;
+    line-height: 2.4rem;
+    font-family: serif;
+    max-width: 444px;
+    margin-top: 12px; }
+    section.intro > p:first-child {
+      margin-top: 24px; }
+  section.intro > a {
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 24px;
+    line-height: 2.4rem;
+    font-family: monospace;
+    display: inline-block;
+    line-height: 36px;
+    padding: 0 24px;
+    background-color: orange;
+    color: navy;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-out;
+    margin-top: 24px; }
+    section.intro > a:hover {
+      background-color: #e69500; }
+    @media (min-width: 768px) and (max-width: 1079px) {
+      section.intro > a {
+        position: absolute;
+        right: 48px;
+        bottom: 24px; } }
+    section.intro > a:focus {
+      box-shadow: 0 0 24px 0 navy; }
+
 .main {
-  max-width: 1111px;
+  max-width: 999px;
   margin: 48px auto;
   padding: 24px;
   background-color: #FFF; }
@@ -594,10 +695,85 @@ header.hero {
     font-family: sans-serif; }
   .main > section.grid {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 777px;
     margin: 48px auto;
     perspective: 1000px; }
+
+section.ordered-list {
+  position: relative;
+  max-width: 777px;
+  margin: 48px auto; }
+  section.ordered-list > h2 {
+    font-weight: 700;
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 28px;
+    line-height: 2.8rem;
+    font-family: sans-serif; }
+  section.ordered-list > ol {
+    max-width: 555px;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 24px; }
+    section.ordered-list > ol > li {
+      display: flex;
+      align-items: center;
+      margin-top: 12px; }
+      section.ordered-list > ol > li:first-child {
+        margin: 0; }
+      section.ordered-list > ol > li > em {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        margin-right: 12px;
+        border-radius: 50%;
+        border: 3px solid lightgray;
+        text-align: center; }
+        section.ordered-list > ol > li > em > i {
+          font-weight: 700;
+          font-size: 13px;
+          font-size: 1.3rem;
+          line-height: 20px;
+          line-height: 2rem;
+          font-family: monospace; }
+      section.ordered-list > ol > li > h3 {
+        font-size: 26px;
+        font-size: 2.6rem;
+        line-height: 36px;
+        line-height: 3.6rem;
+        font-family: serif; }
+      section.ordered-list > ol > li > p {
+        font-size: 14px;
+        font-size: 1.4rem;
+        line-height: 18px;
+        line-height: 1.8rem;
+        font-family: sans-serif;
+        margin-top: 12px; }
+  section.ordered-list > a {
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 24px;
+    line-height: 2.4rem;
+    font-family: monospace;
+    color: navy;
+    transition: color 0.2s ease-out;
+    display: flex;
+    align-items: center; }
+    section.ordered-list > a:hover {
+      color: #e69500; }
+    section.ordered-list > a > em {
+      margin-left: 12px;
+      font-size: 24px; }
+    @media (min-width: 768px) {
+      section.ordered-list > a {
+        position: absolute;
+        top: 0;
+        right: 0; } }
 
 section.overview {
   display: flex;
@@ -679,3 +855,44 @@ section.overview {
           bottom: 24px; } }
       section.overview > div > a:focus {
         box-shadow: 0 0 24px 0 navy; }
+
+article.product-tile {
+  width: 100%; }
+  @media (min-width: 768px) {
+    article.product-tile {
+      width: calc((100% / 2) - 12px); } }
+  @media (min-width: 1080px) {
+    article.product-tile {
+      width: calc((100% / 3) - 12px); } }
+  article.product-tile > a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 75%;
+    background-color: lightgray;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px; }
+    article.product-tile > a > img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+  article.product-tile > nav {
+    display: flex;
+    height: 48px;
+    background-color: gray; }
+    article.product-tile > nav > img {
+      display: block;
+      width: 100%; }
+  article.product-tile > h3 {
+    font-weight: 700;
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 20px;
+    line-height: 2rem;
+    font-family: monospace;
+    margin-top: 12px; }
